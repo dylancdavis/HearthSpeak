@@ -29,7 +29,7 @@ namespace HearthSpeak
                 [new Regex(@"\Amercenaries")] = Mercenaries,
                 [new Regex(@"\Amodes")] = Modes,
                 [new Regex(@"\Ashop for cards")] = ShopButton,
-                [new Regex(@"\Aquest log")] = QuestLog, // TODO: rename to journal, keep quest log as alias
+                [new Regex(@"\Ajournal")] = Journal,
                 [new Regex(@"\Amy collection")] = MyCollection,
                 [new Regex(@"\Aopen packs")] = OpenPacksButton,
 
@@ -225,9 +225,9 @@ namespace HearthSpeak
             InputControl.MouseClick(locator.RankedButton());
         }
 
-        public void QuestLog(List<string> words)
+        public void Journal(List<string> words)
         {
-            InputControl.MouseClick(locator.QuestLogButton());
+            InputControl.MouseClick(locator.JournalButton());
         }
 
         public void ConcedeGame(List<string> words)

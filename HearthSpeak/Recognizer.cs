@@ -28,6 +28,7 @@ namespace HearthSpeak
         {
             var hearthDictionary = new List<string> {
                 "face", "hearthstone", "battlegrounds", "mercenaries", "modes", "solo adventures", "concede game", "cancel", "blue button", "arena", "duels",
+                "journal",
                 "position", "click", "end turn", "power", "champion", "face", "go back", "well played",
                 "thank you", "sorry", "my collection", "oops", "threaten", "greetings", "good game",
                 "escape", "cancel search", "casual", "ranked", "quest log", "center mouse", "hide mouse", "naxxramas",

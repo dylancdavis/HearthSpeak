@@ -169,7 +169,7 @@ namespace HearthSpeak
             return RatioToCoords(.7749, .1432);
         }
 
-        public int[] QuestLogButton()
+        public int[] JournalButton()
         {
             return RatioToCoords(.2778, .8685);
         }
