@@ -23,70 +23,106 @@ namespace HearthSpeak
             locator = new Locator(parser);
             ActionMap = new Dictionary<Regex, Action<List<string>>>
             {
-                [new Regex(@"\Aposition")] = GetPosition,
-                [new Regex(@"\Aclick")] = Click,
-                [new Regex(@"\Aend turn")] = EndTurn,
-                [new Regex(@"\Aplay online")] = PlayGame,
-                [new Regex(@"\Asolo adventures")] = SoloAdventures,
-                [new Regex(@"\Ago back")] = GoBack,
-                [new Regex(@"\Acard (10|[1-9])")] = HandCard,
-                [new Regex(@"\Aplay (10|[1-9])")] = PlayCard,
-                [new Regex(@"\Afriendly [1-9]")] = FriendlyBoard,
-                [new Regex(@"\Aenemy [1-9]")] = OpposingBoard,
-                [new Regex(@"\Apower")] = HeroPower,
-                [new Regex(@"\Achampion")] = FriendlyPortrait,
-                [new Regex(@"\Aface")] = OpposingPortrait,
-                [new Regex(@"\Amulligan( [1-4]| confirm)+")] = Mulligan,
-                [new Regex(@"\Aescape")] = Escape,
-                [new Regex(@"\Acasual")] = SelectCasual,
-                [new Regex(@"\Aranked")] = SelectRanked,
-                [new Regex(@"\Aconcede game")] = ConcedeGame,
-                [new Regex(@"\Aquest log")] = QuestLog,
-                [new Regex(@"\Ablue button")] = BlueButton,
-                [new Regex(@"\Acenter mouse")] = CenterMouse,
-                [new Regex(@"\Ahide mouse")] = HideMouse,
-                [new Regex(@"\Acancel search")] = GameCancel,
+                // Main Menu
+                [new Regex(@"\Ahearthstone")] = Hearthstone,
+                [new Regex(@"\Abattlegrounds")] = Battlegrounds,
+                [new Regex(@"\Amercenaries")] = Mercenaries,
+                [new Regex(@"\Amodes")] = Modes,
+                [new Regex(@"\Ashop for cards")] = ShopButton,
+                [new Regex(@"\Aquest log")] = QuestLog, // TODO: rename to journal, keep quest log as alias
                 [new Regex(@"\Amy collection")] = MyCollection,
+                [new Regex(@"\Aopen packs")] = OpenPacksButton,
+
+                // Modes Menu
+                [new Regex(@"\Aarena")] = Arena,
+                [new Regex(@"\Asolo adventures")] = SoloAdventures,
+                [new Regex(@"\Atavern brawl")] = TavernBrawl,
+                [new Regex(@"\Aduels")] = Duels,
+                [new Regex(@"\Achoose")] = Choose,
+                // TODO: add choose button
+
+                // Packs
+                [new Regex(@"\Ax marks the spot")] = OpenPack,
+
+                // Collection
                 [new Regex(@"\Achoose [1-9]")] = ChooseDeck,
                 [new Regex(@"\Adeck [1-9]")] = SelectBuildDeck,
                 [new Regex(@"\Aselect [1-8]")] = ConstructCard,
                 [new Regex(@"\Afilter [0-7]")] = FilterByMana,
                 [new Regex(@"\Atoggle (10|[1-9])")] = CardBookTabs,
-                [new Regex(@"\Ax marks the spot")] = OpenPack,
                 [new Regex(@"\Aflip next")] = FlipNext,
                 [new Regex(@"\Aflip back")] = FlipBack,
-                [new Regex(@"\Athe arena")] = ArenaOpenButton,
-                [new Regex(@"\Aarena play")] = ArenaPlayButton,
-                [new Regex(@"\Aabuy pack")] = BuyPack,
                 [new Regex(@"\Ashow only golden cards")] = ShowOnlyGoldenCards,
                 [new Regex(@"\Ainclude uncraftable cards")] = IncludeUncraftableCards,
-                [new Regex(@"\Atavern brawl")] = TavernBrawlButton,
-                [new Regex(@"\Adisenchant card")] = DisenchantCard,
-                [new Regex(@"\Acreate card")] = CreateCard,
-                [new Regex(@"\Aconfirm disenchant")] = ConfirmDisenchant,
-                [new Regex(@"\Acancel disenchant")] = CancelDisenchant,
-                [new Regex(@"\Acrafting")] = CraftingButton,
-                [new Regex(@"\Aopen packs")] = OpenPacksButton,
-                [new Regex(@"\Ashop for cards")] = ShopButton,
-                [new Regex(@"\Abuy arena admission")] = BuyArenaAdmission,
-
                 [new Regex(@"\Aremove \d( \d)?")] = RemoveCardInDeckList,
                 [new Regex(@"\Ascroll up")] = ScrollCardListUp,
                 [new Regex(@"\Ascroll down")] = ScrollCardListDown,
 
-                [new Regex(@"\A(up|right|down|left).+")] = MoveDirection,
+                // Collection: Crafting
+                [new Regex(@"\Acrafting")] = CraftingButton,
+                [new Regex(@"\Adisenchant card")] = DisenchantCard,
+                [new Regex(@"\Acreate card")] = CreateCard,
+                [new Regex(@"\Aconfirm disenchant")] = ConfirmDisenchant,
+                [new Regex(@"\Acancel disenchant")] = CancelDisenchant,
+
+                // Playing
+                [new Regex(@"\Amulligan( [1-4]| confirm)+")] = Mulligan,
+                [new Regex(@"\Acard (10|[1-9])")] = HandCard,
+                [new Regex(@"\Aplay (10|[1-9])")] = PlayCard,
+                [new Regex(@"\Afriendly [1-9]")] = FriendlyBoard,
+                [new Regex(@"\Aenemy [1-9]")] = OpposingBoard,
+                [new Regex(@"\Aface")] = OpposingPortrait,
+                [new Regex(@"\Achampion")] = FriendlyPortrait,
                 [new Regex(@"\A(thank you)|(sorry)|(well played)|(good game)|(oops)|(threaten)|(greetings)")] = Emote,
+                [new Regex(@"\Apower")] = HeroPower,
+                [new Regex(@"\Aend turn")] = EndTurn,
+                [new Regex(@"\Aconcede game")] = ConcedeGame,
+
+                // Misc Navigation
+                [new Regex(@"\Aescape")] = Escape,
+                [new Regex(@"\Ago back")] = GoBack,
+                [new Regex(@"\Acancel search")] = GameCancel,
+                [new Regex(@"\Ablue button")] = BlueButton,
+                [new Regex(@"\Abuy arena admission")] = BuyArenaAdmission,
+
+                // Mouse Movement
+                [new Regex(@"\Ahide mouse")] = HideMouse,
+                [new Regex(@"\Aposition")] = GetPosition,
+                [new Regex(@"\Aclick")] = Click,
+                [new Regex(@"\Acenter mouse")] = CenterMouse,
+                [new Regex(@"\A(up|right|down|left).+")] = MoveDirection,
+
+                // Needs to be removed/reworked
+                [new Regex(@"\Acasual")] = SelectCasual,
+                [new Regex(@"\Aranked")] = SelectRanked,
+                [new Regex(@"\Athe arena")] = ArenaOpenButton,
+                [new Regex(@"\Aabuy pack")] = BuyPack,
             };
         }
 
-        public void PlayGame(List<string> words)
+        public void Hearthstone(List<string> words)
         {
-            InputControl.MouseClick(locator.PlayButton());
+            InputControl.MouseClick(locator.HearthstoneButton());
+        }
+
+        public void Mercenaries(List<string> words)
+        {
+            InputControl.MouseClick(locator.MercenariesButton());
         }
 
         public void SoloAdventures(List<string> words)
         {
             InputControl.MouseClick(locator.SoloAdventuresButton());
+        }
+
+        public void Battlegrounds(List<string> words)
+        {
+            InputControl.MouseClick(locator.BattlegroundsButton());
+        }
+
+        public void Choose(List<string> words)
+        {
+            InputControl.MouseClick(locator.ChooseButton());
         }
 
         public void GoBack(List<string> words)
@@ -330,16 +366,25 @@ namespace HearthSpeak
             InputControl.MouseClick(locator.ArenaOpenButton());
         }
 
-        public void ArenaPlayButton(List<string> words)
+        public void Arena(List<string> words)
         {
-            InputControl.MouseClick(locator.ArenaPlayButton());
+            InputControl.MouseClick(locator.ArenaButton());
         }
 
-        public void TavernBrawlButton(List<string> words)
+        public void TavernBrawl (List<string> words)
         {
             InputControl.MouseClick(locator.TavernBrawlButton());
         }
 
+        public void Modes(List<string> words)
+        {
+            InputControl.MouseClick(locator.ModesButton());
+        }
+
+        public void Duels(List<string> words)
+        {
+            InputControl.MouseClick(locator.DuelsButton());
+        }
 
         public void BuyPack(List<string> words)
         {

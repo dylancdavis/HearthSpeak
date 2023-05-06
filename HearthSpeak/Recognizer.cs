@@ -27,13 +27,13 @@ namespace HearthSpeak
         Grammar BuildGrammar()
         {
             var hearthDictionary = new List<string> {
-                "face", "play online", "solo adventures", "concede game", "cancel", "blue button",
+                "face", "hearthstone", "battlegrounds", "mercenaries", "modes", "solo adventures", "concede game", "cancel", "blue button", "arena", "duels",
                 "position", "click", "end turn", "power", "champion", "face", "go back", "well played",
                 "thank you", "sorry", "my collection", "oops", "threaten", "greetings", "good game",
                 "escape", "cancel search", "casual", "ranked", "quest log", "center mouse", "hide mouse", "naxxramas",
                 "open packs", "flip next", "flip back", "the arena", "arena play", "tavern brawl", "scroll up", "scroll down",
                 "crafting", "confirm disenchant", "cancel disenchant", "create card", "disenchant card", "buy pack",
-                "show only golden cards", "include uncraftable cards", "x marks the spot", "shop for cards", "buy arena admission"
+                "show only golden cards", "include uncraftable cards", "x marks the spot", "shop for cards", "buy arena admission", "choose"
             };
             foreach (string desc in new string[] { "friendly", "enemy", "card", "deck", "play", "choose", "select",
                                                    "filter", "toggle" })

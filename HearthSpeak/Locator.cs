@@ -33,12 +33,27 @@ namespace HearthSpeak
             return RatioToCoords( .8129, .4518);
         }
 
-        public int[] PlayButton()
+        public int[] HearthstoneButton()
         {
             return RatioToCoords(.497, .306);
         }
 
+        public int[] MercenariesButton()
+        {
+            return RatioToCoords(.497, .454);
+        }
+
         public int[] SoloAdventuresButton()
+        {
+            return RatioToCoords(.4219, .2593);
+        }
+
+        public int[] ChooseButton()
+        {
+            return RatioToCoords(.71, .7);
+        }
+
+        public int[] BattlegroundsButton()
         {
             return RatioToCoords(.4825, .3776);
         }
@@ -291,12 +306,22 @@ namespace HearthSpeak
             return RatioToCoords(.4934, .4492);
         }
 
-        public int[] ArenaPlayButton()
+        public int[] ArenaButton()
         {
-            return RatioToCoords(.5702, .7813);
+            return RatioToCoords(.2865, .4167);
+        }
+
+        public int[] DuelsButton()
+        {
+            return RatioToCoords(.5651, .4167);
         }
 
         public int[] TavernBrawlButton()
+        {
+            return RatioToCoords(.7015, .2593);
+        }
+
+        public int[] ModesButton()
         {
             return RatioToCoords(.5044, .5143);
         }
