@@ -27,14 +27,30 @@ namespace HearthSpeak
         Grammar BuildGrammar()
         {
             var hearthDictionary = new List<string> {
-                "face", "hearthstone", "battlegrounds", "mercenaries", "modes", "solo adventures", "concede game", "cancel", "blue button", "arena", "duels",
-                "journal",
-                "position", "click", "end turn", "power", "champion", "go back", "well played",
-                "thank you", "sorry", "my collection", "oops", "threaten", "greetings", "good game",
-                "escape", "cancel search", "casual", "ranked", "center mouse", "hide mouse", "naxxramas",
-                "open packs", "flip next", "flip back", "arena play", "tavern brawl", "scroll up", "scroll down",
+                // Main Menu
+                 "hearthstone", "battlegrounds", "mercenaries", "modes", "shop for cards", "journal", "open packs", "my collection",
+
+                // Modes Menu
+                 "solo adventures","arena", "duels", "tavern brawl",  "choose",
+
+                // Playing Game
+                "face",  "concede game",  "blue button", "end turn", "power", "champion",
+
+                // Emotes
+                "thank you", "sorry",  "oops", "threaten", "greetings", "good game",  "well played",
+
+                // Miscellaenous
+                "cancel", "position", "click", "go back",  "escape", "cancel search", "casual", "ranked",  "naxxramas",
+                "x marks the spot", "buy arena admission",
+
+                // Mouse Movement
+                "center mouse", "hide mouse",
+
+                // Collections
+                 "flip next", "flip back",  "scroll up", "scroll down",
                 "crafting", "confirm disenchant", "cancel disenchant", "create card", "disenchant card", "buy pack",
-                "show only golden cards", "include uncraftable cards", "x marks the spot", "shop for cards", "buy arena admission", "choose"
+                "show only golden cards", "include uncraftable cards"
+
             };
             foreach (string desc in new string[] { "friendly", "enemy", "card", "deck", "play", "choose", "select",
                                                    "filter", "toggle" })
