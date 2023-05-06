@@ -28,7 +28,7 @@ namespace HearthSpeak
         {
             var hearthDictionary = new List<string> {
                 // Main Menu
-                 "hearthstone", "battlegrounds", "mercenaries", "modes", "shop for cards", "journal", "open packs", "my collection",
+                 "hearthstone", "battlegrounds", "mercenaries", "modes", "shop", "journal", "open packs", "my collection",
 
                 // Journal
                 "quests", "quest log", "rewards", "rewards track", "achievements", "complete achievement", "profile", "close journal",

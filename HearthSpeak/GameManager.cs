@@ -28,7 +28,7 @@ namespace HearthSpeak
                 [new Regex(@"\Abattlegrounds")] = Battlegrounds,
                 [new Regex(@"\Amercenaries")] = Mercenaries,
                 [new Regex(@"\Amodes")] = Modes,
-                [new Regex(@"\Ashop for cards")] = ShopButton,
+                [new Regex(@"\Ashop")] = ShopButton,
                 [new Regex(@"\Ajournal")] = Journal,
                 [new Regex(@"\Amy collection")] = MyCollection,
                 [new Regex(@"\Aopen packs")] = OpenPacksButton,
