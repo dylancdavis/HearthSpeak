@@ -30,20 +30,23 @@ namespace HearthSpeak
                 // Main Menu
                  "hearthstone", "battlegrounds", "mercenaries", "modes", "shop for cards", "journal", "open packs", "my collection",
 
-                // Modes Menu
-                 "solo adventures","arena", "duels", "tavern brawl",  "choose",
-
                 // Journal
                 "quests", "quest log", "rewards", "rewards track", "achievements", "complete achievement", "profile", "close journal",
 
+                // Modes Menu
+                 "solo adventures","arena", "duels", "tavern brawl",  "choose",
+
+                // Hearthstone Menu
+                "classic", "standard", "wild", "casual", "blue button", "play",
+
                 // Playing Game
-                "face",  "concede game",  "blue button", "end turn", "power", "champion",
+                "face",  "concede game",   "end turn", "power", "champion",
 
                 // Emotes
                 "thank you", "sorry",  "oops", "threaten", "greetings", "good game",  "well played",
 
                 // Miscellaenous
-                "cancel", "position", "click", "go back",  "escape", "cancel search", "casual", "ranked",  "naxxramas",
+                "cancel", "position", "click", "go back",  "escape", "cancel search",   "naxxramas",
                 "x marks the spot", "buy arena admission",
 
                 // Mouse Movement

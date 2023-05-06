@@ -90,8 +90,9 @@ namespace HearthSpeak
                 // Misc Navigation
                 [new Regex(@"\Aescape")] = Escape,
                 [new Regex(@"\Ago back")] = GoBack,
-                [new Regex(@"\Acancel search")] = GameCancel,
-                [new Regex(@"\Ablue button")] = BlueButton,
+                [new Regex(@"\Acancel search")] = CancelSearch,
+                [new Regex(@"\Ablue button")] = PlayGame,
+                [new Regex(@"\Aplay")] = PlayGame,
                 [new Regex(@"\Abuy arena admission")] = BuyArenaAdmission,
 
                 // Mouse Movement
@@ -102,8 +103,10 @@ namespace HearthSpeak
                 [new Regex(@"\A(up|right|down|left).+")] = MoveDirection,
 
                 // Needs to be removed/reworked
+                [new Regex(@"\Aclassic")] = SelectClassic,
+                [new Regex(@"\Astandard")] = SelectStandard,
+                [new Regex(@"\Awild")] = SelectWild,
                 [new Regex(@"\Acasual")] = SelectCasual,
-                [new Regex(@"\Aranked")] = SelectRanked,
                 [new Regex(@"\Athe arena")] = ArenaOpenButton,
                 [new Regex(@"\Aabuy pack")] = BuyPack,
             };
@@ -224,15 +227,33 @@ namespace HearthSpeak
             InputControl.TypeKeys("{ESC}");
         }
 
+        // Hearthstone Menu (as in the Hearthstone Game Mode)
+        public void SelectClassic(List<string> words)
+        {
+            InputControl.MouseClick(locator.SwitchFormatButton());
+            Thread.Sleep(ClickDelay);
+            InputControl.MouseClick(locator.ClassicButton());
+        }
+        public void SelectStandard(List<string> words)
+        {
+            InputControl.MouseClick(locator.SwitchFormatButton());
+            Thread.Sleep(ClickDelay);
+            InputControl.MouseClick(locator.StandardButton());
+        }
+        public void SelectWild(List<string> words)
+        {
+            InputControl.MouseClick(locator.SwitchFormatButton());
+            Thread.Sleep(ClickDelay);
+            InputControl.MouseClick(locator.WildButton());
+        }
         public void SelectCasual(List<string> words)
         {
+            InputControl.MouseClick(locator.SwitchFormatButton());
+            Thread.Sleep(ClickDelay);
             InputControl.MouseClick(locator.CasualButton());
         }
 
-        public void SelectRanked(List<string> words)
-        {
-            InputControl.MouseClick(locator.RankedButton());
-        }
+
 
         public void Journal(List<string> words)
         {
@@ -246,10 +267,10 @@ namespace HearthSpeak
             InputControl.MouseClick(locator.ConcedeButton());
         }
 
-        public void BlueButton(List<string> words)
+        public void PlayGame(List<string> words)
         {
             Thread.Sleep(ClickDelay);
-            InputControl.MouseClick(locator.BlueButton());
+            InputControl.MouseClick(locator.PlayGameButton());
         }
 
         public void CenterMouse(List<string> words)
@@ -269,9 +290,9 @@ namespace HearthSpeak
         }
 
 
-        public void GameCancel(List<string> words)
+        public void CancelSearch(List<string> words)
         {
-            InputControl.MouseClick(locator.GameCancelButton());
+            InputControl.MouseClick(locator.CancelSearchButton());
         }
 
         public void PlayCard(List<string> words)

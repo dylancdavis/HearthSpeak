@@ -159,14 +159,29 @@ namespace HearthSpeak
             return RatioToCoords(mulliganPositions[0], mulliganPositions[1]);
         }
 
-        public int[] CasualButton()
+        public int[] SwitchFormatButton()
         {
-            return RatioToCoords(.6798, .1628);
+            return RatioToCoords(.732, .047);
         }
 
-        public int[] RankedButton()
+        public int[] ClassicButton()
         {
-            return RatioToCoords(.7749, .1432);
+            return RatioToCoords(.247, .414);
+        }
+
+        public int[] StandardButton()
+        {
+            return RatioToCoords(.417, .313);
+        }
+
+        public int[] WildButton()
+        {
+            return RatioToCoords(.589, .313);
+        }
+
+        public int[] CasualButton()
+        {
+            return RatioToCoords(.760, .414);
         }
 
         public int[] JournalButton()
@@ -179,9 +194,9 @@ namespace HearthSpeak
             return RatioToCoords(.5, .3659);
         }
 
-        public int[] BlueButton()
+        public int[] PlayGameButton()
         {
-            return RatioToCoords(.7028, .8216);
+            return RatioToCoords(.729, .833);
         }
 
         public int[] ConstructCard(int cardNum)
@@ -230,9 +245,9 @@ namespace HearthSpeak
         }
 
 
-        public int[] GameCancelButton()
+        public int[] CancelSearchButton()
         {
-            return RatioToCoords(.5117, .9074);
+            return RatioToCoords(.514, .846);
         }
 
         public int[] GoldArenaAdmission()
