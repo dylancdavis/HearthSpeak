@@ -241,7 +241,7 @@ namespace HearthSpeak
 
         public int[] MyCollectionButton()
         {
-            return RatioToCoords(.3771, .9074);
+            return RatioToCoords(.547, .833);
         }
 
 
