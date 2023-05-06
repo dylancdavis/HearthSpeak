@@ -33,6 +33,9 @@ namespace HearthSpeak
                 // Modes Menu
                  "solo adventures","arena", "duels", "tavern brawl",  "choose",
 
+                // Journal
+                "quests", "quest log", "rewards", "rewards track", "achievements", "complete achievement", "profile", "close journal",
+
                 // Playing Game
                 "face",  "concede game",  "blue button", "end turn", "power", "champion",
 

@@ -39,7 +39,16 @@ namespace HearthSpeak
                 [new Regex(@"\Atavern brawl")] = TavernBrawl,
                 [new Regex(@"\Aduels")] = Duels,
                 [new Regex(@"\Achoose")] = Choose,
-                // TODO: add choose button
+
+                // Journal Menu
+                [new Regex(@"\Aquests")] = Quests,
+                [new Regex(@"\Aquest log")] = Quests,
+                [new Regex(@"\Arewards")] = RewardsTrack,
+                [new Regex(@"\Arewards track")] = RewardsTrack,
+                [new Regex(@"\Aachievements")] = Achievements,
+                [new Regex(@"\Acomplete achievement")] = CompleteAchievement,
+                [new Regex(@"\Aprofile")] = Profile,
+                [new Regex(@"\Aclose journal")] = CloseJournal,
 
                 // Packs
                 [new Regex(@"\Ax marks the spot")] = OpenPack,
@@ -471,6 +480,37 @@ namespace HearthSpeak
         public void ScrollCardListUp(List<string> words)
         {
             InputControl.MouseClick(locator.CardListDragStart());
+        }
+
+        // Journal Buttons
+        public void Quests(List<string> words)
+        {
+            InputControl.MouseClick(locator.QuestsButton());
+        }
+
+        public void RewardsTrack(List<string> words)
+        {
+            InputControl.MouseClick(locator.RewardsTrackButton());
+        }
+
+        public void Achievements(List<string> words)
+        {
+            InputControl.MouseClick(locator.AchievementsButton());
+        }
+
+        public void CompleteAchievement(List<string> words)
+        {
+            InputControl.MouseClick(locator.CompleteAchievement());
+        }
+
+        public void Profile(List<string> words)
+        {
+            InputControl.MouseClick(locator.ProfileButton());
+        }
+
+        public void CloseJournal(List<string> words)
+        {
+            InputControl.MouseClick(locator.CloseJournal());
         }
 
     }

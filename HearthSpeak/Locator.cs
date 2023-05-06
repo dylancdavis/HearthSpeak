@@ -394,5 +394,35 @@ namespace HearthSpeak
             };
             return ratios.Select(coords => new int[] { (int)coords[0], (int)coords[1] }).ToArray();
         }
+
+        public int[] QuestsButton()
+        {
+            return RatioToCoords(.179, .219);
+        }
+
+        public int[] RewardsTrackButton()
+        {
+            return RatioToCoords(.179, .335);
+        }
+
+        public int[] AchievementsButton()
+        {
+            return RatioToCoords(.179, .454);
+        }
+
+        public int[] CompleteAchievement()
+        {
+            return RatioToCoords(.722, .4);
+        }
+
+        public int[] ProfileButton()
+        {
+            return RatioToCoords(.179, .569);
+        }
+
+        public int[] CloseJournal()
+        {
+            return RatioToCoords(.938, .522);
+        }
     }
 }
